@@ -1,0 +1,12 @@
+[Unit]
+Description=Run once on every boot
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/stty -F /dev/ttyS1 115200
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+

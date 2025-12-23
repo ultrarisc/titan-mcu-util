@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = "configure" ]; then
+    systemctl daemon-reload || true
+    deb-systemd-helper unmask corepvt.timer || true
+    deb-systemd-helper enable corepvt.timer || true
+    deb-systemd-helper unmask uart1_buad.service || true
+    deb-systemd-helper enable uart1_buad.service || true
+    deb-systemd-invoke start uart1_buad.service || true
+    deb-systemd-invoke start corepvt.timer || true
+fi
+
+exit 0
+

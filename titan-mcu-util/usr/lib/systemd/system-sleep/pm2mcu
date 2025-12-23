@@ -1,0 +1,16 @@
+#!/bin/sh
+UART_PORT=1
+Msg_Type=05
+Msg_len=01
+case "$1" in
+  pre)
+    Value_temp=88
+    temp_16=`printf "%x\n" $Value_temp`
+    echo "$Msg_Type$Msg_len$temp_16"|xxd -r -p >/dev/ttyS$UART_PORT
+    ;;
+  post)
+    Value_temp=89
+    temp_16=`printf "%x\n" $Value_temp`
+    echo "$Msg_Type$Msg_len$temp_16"|xxd -r -p >/dev/ttyS$UART_PORT
+    ;;
+esac

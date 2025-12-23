@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+case "$1" in
+    purge)
+
+        rm -f /var/lib/systemd/deb-systemd-helper-enabled/corepvt*
+        rm -f /var/lib/systemd/deb-systemd-helper-enabled/uart1_buad*
+esac
+
+exit 0
+

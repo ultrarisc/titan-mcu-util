@@ -1,0 +1,9 @@
+Package: titan-mcu-util
+Version: 0.1.0-5
+Source: titan-mcu-util
+Section: admin
+Priority: optional
+Maintainer: chenfei <chenfei@ultrarisc.com>
+Build-Depends: gcc
+Architecture: riscv64
+Description: CORE PVT

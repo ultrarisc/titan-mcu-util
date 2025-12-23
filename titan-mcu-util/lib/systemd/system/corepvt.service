@@ -1,0 +1,13 @@
+[Unit]
+Description=Run corepvt
+After=multi-user.target serial-getty@ttyS1.service
+Wants=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/corepvt.sh
+User=root
+Group=root
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Restart=on-failure
+
